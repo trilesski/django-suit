@@ -67,7 +67,7 @@ class EnclosedInput(TextInput):
     def enclose_value(self, value, wrapper_class):
         if value.startswith("fa-"):
             value = '<i class="fa %s"></i>' % value
-        return '<span class="input-group-%s">%s</span>' % (wrapper_class, value)
+        return '<span class="input-group-text input-group-%s"%s>%s</span>' % (wrapper_class, "onclick=" + self.onclick_append if self.onclick_append else "", value)
 
     def render(self, name, value, attrs=None, renderer=None):
         output = super(EnclosedInput, self).render(name, value, attrs)
