@@ -31,11 +31,11 @@ window.Suit = Suit;
 
         var init = function () {
             $(document).ready(function () {
-                $topActions = $('.results').parent().find('.actions').eq(0);
+                $topActions = $('.changelist-form-container').parent().find('.actions').eq(0);
                 if (!$topActions.length)
                     return;
 
-                $("tr input.action-select, #action-toggle").on('click', checkIfSelected);
+                $("tr input.action-select").on('click', checkIfSelected);
             });
         };
 
